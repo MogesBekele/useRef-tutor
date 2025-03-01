@@ -8,9 +8,8 @@ const App = () => {
     if(ref.current.value){
       setText(ref.current.value)
       alert('excellent')
-    } else {
-      alert('Please enter a value')
-    }
+  }  
+    
 
   }
 
