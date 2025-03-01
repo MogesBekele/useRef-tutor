@@ -7,8 +7,10 @@ const App = () => {
   const handleButton = () => {
     if (ref.current.value) {
       setText(ref.current.value);
+      alert("excellent");
     }
-    alert("excellent");
+    ref.current.value = ""; // Clear input field after alert is displayed.
+    
   };
 
   return (
