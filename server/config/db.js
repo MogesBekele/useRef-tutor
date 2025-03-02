@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 // Database connection function
-const connectDB = async () => {
+export const connectDB = async () => {
   mongoose.connection.on("connected", () => {
     console.log("MongoDB connected");
   });
@@ -10,19 +10,4 @@ const connectDB = async () => {
     useUnifiedTopology: true,
   });
 };
-
-export { connectDB };
-
-// User schema definition
-const userSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  email: { type: String, required: true, unique: true },
-  password: { type: String, required: true },
-  image: { type: String, required: true },
-});
-
-// User model creation
-const User = mongoose.model("User", userSchema);
-
-export default User;
 
