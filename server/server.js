@@ -1,6 +1,7 @@
 import express from "express";
 import multer from "multer";
 import cors from "cors";
+import { connectDB } from "./config/db";
 
 
 const app = express();
@@ -9,6 +10,8 @@ const port = 4000;
 app.use(express.json());
 
 app.use(cors());
+
+connectDB()
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -29,6 +32,6 @@ app.get("/", (req, res) => {
   res.send("Hello, World!");
 });
 
-app.listen(() => {
+app.listen(port, () => {
   console.log(`Server is running on port ${port} `);
 });
