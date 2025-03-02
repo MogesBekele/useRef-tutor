@@ -24,6 +24,11 @@ const FetchData = () => {
         },
       });
       console.log("File uploaded successfully:", response.data);
+      // Clear input fields after successful submission
+      setName("");
+      setEmail("");
+      setPassword("");
+      setFile(null);
     } catch (error) {
       console.error("Error uploading file:", error);
     }

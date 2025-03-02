@@ -3,15 +3,13 @@ import multer from "multer";
 import cors from "cors";
 import { connectDB } from "./config/db";
 
-
 const app = express();
 const port = 4000;
 
 app.use(express.json());
-
 app.use(cors());
 
-connectDB()
+connectDB();
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
