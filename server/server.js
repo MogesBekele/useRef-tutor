@@ -6,8 +6,12 @@ import { connectDB } from "./config/db.js";
 import { uploadController } from "./uploadController.js";
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
 dotenv.config(); // Load environment variables
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const port = 4000;
