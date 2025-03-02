@@ -3,6 +3,7 @@ import multer from "multer";
 import cors from "cors";
 import dotenv from "dotenv";
 import { connectDB } from "./config/db.js";
+import { uploadController } from "./uploadController.js";
 
 dotenv.config(); // Load environment variables
 
@@ -25,11 +26,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-app.post("/upload", upload.single("file"), (req, res) => {
-  const { name, email, password } = req.body;
-  console.log(`Name: ${name}, Email: ${email}, Password: ${password}`);
-  res.send(`File uploaded successfully: ${req.file.filename}`);
-});
+app.post("/upload", upload.single("file"), uploadController);
 
 app.get("/", (req, res) => {
   res.send("Hello, World!");
