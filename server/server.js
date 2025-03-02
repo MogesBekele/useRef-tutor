@@ -1,7 +1,10 @@
 import express from "express";
 import multer from "multer";
 import cors from "cors";
-import { connectDB } from "./config/db";
+import dotenv from "dotenv";
+import { connectDB } from "./config/db.js";
+
+dotenv.config(); // Load environment variables
 
 const app = express();
 const port = 4000;
