@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import FetchData from "./FetchData";
 
 const App = () => {
   const ref = useRef(null);
@@ -19,6 +20,7 @@ const App = () => {
 
       <button onClick={handleButton}>Get Text</button>
       <p>{text}</p>
+      <FetchData />
     </div>
   );
 };
