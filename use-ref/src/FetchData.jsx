@@ -40,23 +40,23 @@ const FetchData = () => {
           required
         />
         <input
-        required
           type="email"
           placeholder="Enter email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          required
         />
         <input
-        required
           type="password"
           placeholder="Enter password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          required
         />
         <input
-        required
           type="file"
           onChange={(e) => setFile(e.target.files[0])}
+          required
         />
         <button type="submit">Submit</button>
       </form>

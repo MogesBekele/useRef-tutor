@@ -25,6 +25,8 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 app.post("/upload", upload.single("file"), (req, res) => {
+  const { name, email, password } = req.body;
+  console.log(`Name: ${name}, Email: ${email}, Password: ${password}`);
   res.send(`File uploaded successfully: ${req.file.filename}`);
 });
 
