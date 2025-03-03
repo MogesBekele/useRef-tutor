@@ -35,14 +35,16 @@ const FetchData = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+      <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md w-full max-w-lg">
+        <h2 className="text-2xl font-bold mb-4">Upload File</h2>
         <input
           type="text"
           placeholder="Enter name"
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
+          className="mb-4 p-2 border border-gray-300 rounded w-full"
         />
         <input
           type="email"
@@ -50,6 +52,7 @@ const FetchData = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
+          className="mb-4 p-2 border border-gray-300 rounded w-full"
         />
         <input
           type="password"
@@ -57,13 +60,17 @@ const FetchData = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
+          className="mb-4 p-2 border border-gray-300 rounded w-full"
         />
         <input
           type="file"
           onChange={(e) => setFile(e.target.files[0])}
           required
+          className="mb-4 p-2 border border-gray-300 rounded w-1/2 bg-gray-300 cursor-pointer"
         />
-        <button type="submit">Submit</button>
+        <button type="submit" className="bg-blue-500 text-white p-2 rounded w-full">
+          Submit
+        </button>
       </form>
     </div>
   );
