@@ -68,7 +68,7 @@ const FetchData = () => {
           required
           className="mb-4 p-2 border border-gray-300 rounded w-1/2 bg-gray-300 cursor-pointer"
         />
-        <button type="submit" className="bg-blue-500 text-white p-2 rounded w-full">
+        <button type="submit" className="bg-blue-500 text-white p-2 rounded w-full cursor-pointer">
           Submit
         </button>
       </form>
